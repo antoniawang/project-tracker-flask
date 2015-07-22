@@ -98,6 +98,24 @@ def  get_all_grades(student_github):
     for row in rows :
         print "Project: %s / Grade: %s" %(row[0], row[1])
 
+def  get_all_students():
+    """Getting a list of all the students."""
+    QUERY = """
+        SELECT first_name, last_name, github FROM Students
+        """
+    db_cursor.execute(QUERY)
+    db_cursor.fetchall()
+    # for row in rows :
+    #     print "Project: %s / Grade: %s" %(row[0], row[1])
+
+def  get_all_projects():
+    """Getting a list of all the projects."""
+    QUERY = """
+        SELECT title FROM Projects
+        """
+    db_cursor.execute(QUERY)
+    db_cursor.fetchall()
+
 
 def handle_input():
     """Main loop.
